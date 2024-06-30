@@ -10,26 +10,53 @@
   <modules>
     <module>microservice_user</module>
     <module>microservice_coupon</module>
+    <module>microservice_order</module>
+    <module>microservice_common_api</module>
   </modules>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.1.0</version>
-  </parent>
+  <properties>
+    <dubbo.version>3.2.0-beta.4</dubbo.version>
+    <spring-boot.version>2.7.8</spring-boot.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
 
   <dependencyManagement>
   <!-- Additional lines to be added here... -->
   <dependencies>
+    <!-- Spring Boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>${spring-boot.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
 
+    <!-- Dubbo -->
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-bom</artifactId>
+      <version>${dubbo.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+      <version>${dubbo.version}</version>
+      <type>pom</type>
+    </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.20</version>
+      <version>1.18.22</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -52,6 +79,8 @@
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>3.0.1</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-starter -->
+
 
   </dependencies>
   </dependencyManagement>

@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+#mapper xml ????
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+#	???url
+spring:
+  application:
+    name: DUBBO-PROVIDER
+  datasource:
+    url: jdbc:mysql://localhost:3306/project?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 199784zsm
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1

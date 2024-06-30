@@ -1,4 +1,4 @@
-package com.user.beans;
+package com.example.entity.user;
 
 
 import lombok.AllArgsConstructor;
