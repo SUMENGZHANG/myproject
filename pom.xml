@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>microservice_user</module>
-    <module>microservice_coupon</module>
+    <module>microservice_pending</module>
   </modules>
 
   <parent>
